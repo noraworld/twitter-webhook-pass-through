@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const express    = require('express');
 const app        = express();
-const port       = 5000;
+const port       = process.env.PORT;
 const crypto     = require('crypto');
 const request    = require('request');
 const bodyParser = require('body-parser');
@@ -36,7 +36,8 @@ app.post('/webhook', (req, res) => {
         console.log(err);
       }
       else {
-        console.log('OK');
+        // console.log('OK');
+        // console.log(req.body.tweet_create_events);
       }
     });
   }
